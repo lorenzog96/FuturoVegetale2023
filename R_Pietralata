@@ -33,3 +33,21 @@ max values :          255,          255,          255
 # - Nomi dei file ("bande") che compongono il RasterBrick.
 # - Minimo e Massimo sono i valori min e max di riflettanza delle varie bande.
 
+# NB: (la riflettanza è la divisione tra quanto flusso radiante viene riflesso e quanto viene assorbito).
+#     Se assorbo tutta la radiazione, la riflettanza è pari a 0; se viene riflessa tutta la luce, la riflettanza (in questo caso) è 65535 (16 bit).
+
+# Eseguo il primo plot per vedere l'immagine
+plotRGB(Pietra, r=1, g=2, b=3, stretch="lin")
+
+# In questo caso esce l'immagine nello spettro visibile, quindi è ciò che si vede dal satellite ad occhio nudo.
+
+# Creo un pdf del plot, nominandolo "Pietra.pdf"; 
+# il file finirà direttamente all'interno della cartella richiamata all'inizio.
+pdf("Pietra.pdf")
+plotRGB(Pietra, r=4, g=3, b=2, stretch="lin")
+
+# Layer 2 = Blue
+# Layer 3 = Green
+# Layer 4 = Red
+# Layer 5 = NIR
+
