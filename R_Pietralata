@@ -1,0 +1,35 @@
+# Prime prove di elaborazione mapping riguardante il territorio di Pietralata
+# Inizio dal caricare i pacchetti necessari
+library(raster) # Necessario per caricare e operare dati raster ("immagini sovrapposte - bande")
+library(RStoolbox) # Necessario per la produzione degli Indici Spettrali e la Classificazione
+library(ggplot2) # Necessario come altra modalità oltre a raster per tradurre graficamente i dati
+library(patchwork) # Pacchetto semplificato per la produzione di Multiframe
+library(viridis)
+
+# Per iniziare indico la cartella da cui devo prelevare il file
+setwd(C:\Users\Lorenzo\Desktop\Master - Futuro Vegetale\02_Tesi\Carte)
+
+# Carico il file, lo nomino Pietra
+Pietra <- brick("Pietralata.jpg")
+
+# Cerco le info legate al file
+Pietra
+class      : RasterBrick 
+dimensions : 4676, 8192, 38305792, 3  (nrow, ncol, ncell, nlayers)
+resolution : 1, 1  (x, y)
+extent     : 0, 8192, 0, 4676  (xmin, xmax, ymin, ymax)
+crs        : NA 
+source     : Pietralata.jpg 
+names      : Pietralata.1, Pietralata.2, Pietralata.3 
+min values :            0,            0,            0 
+max values :          255,          255,          255 
+
+# Cosa significano i dati che ne fuoriescono:
+# - RasterBrick rappresenta la classe di appartenenza dell'immagine
+# - Le dimensioni definiscono: 4676 righe, 8192 colonne, 38.305.792 pixel totali, 3 bande.
+# - Risoluzione = 1 metro.
+# - Estensione: rappresentano i pixel di partenza e di arrivo, sia nella componente x che nella y.
+# - Crs va ad indicare i Sistemi di Riferimento: in questo caso non lo conosce, ma sappiamo essere il sistema Google Earth.
+# - Nomi dei file ("bande") che compongono il RasterBrick.
+# - Minimo e Massimo sono i valori min e max di riflettanza delle varie bande.
+
