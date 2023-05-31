@@ -7,7 +7,7 @@ library(patchwork) # Pacchetto semplificato per la produzione di Multiframe
 library(viridis)
 
 # Per iniziare indico la cartella da cui devo prelevare il file
-setwd(C:\Users\Lorenzo\Desktop\Master - Futuro Vegetale\02_Tesi\Carte)
+setwd("C:/Users/Lorenzo/Desktop/Master - Futuro Vegetale/02_Tesi/Carte")
 
 # Carico il file, lo nomino Pietra
 Pietra <- brick("Pietralata.jpg")
@@ -34,7 +34,7 @@ max values :          255,          255,          255
 # - Minimo e Massimo sono i valori min e max di riflettanza delle varie bande.
 
 # NB: (la riflettanza è la divisione tra quanto flusso radiante viene riflesso e quanto viene assorbito).
-#     Se assorbo tutta la radiazione, la riflettanza è pari a 0; se viene riflessa tutta la luce, la riflettanza (in questo caso) è 65535 (16 bit).
+#     Se assorbo tutta la radiazione, la riflettanza è pari a 0; se viene riflessa tutta la luce, la riflettanza (in questo caso) è 255.
 
 # Eseguo il primo plot per vedere l'immagine
 plotRGB(Pietra, r=1, g=2, b=3, stretch="lin")
