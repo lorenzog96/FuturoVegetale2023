@@ -50,9 +50,9 @@ plotRGB(Pietra, r=1, g=2, b=3, stretch="lin")
 # Layer 2 = Green
 # Layer 3 = Blue
 
-# Creo le Classi di suddivisione dell'area, e la verifico nel plot (con apposito range di colori scelto, funzione colorRampPalette).
-# Decido di creare 3 classi, in quanto i componenti principali del territorio sono: acqua, abitazioni, vegetazione.
-Pietra4 <- unsuperClass(Pietra, nClasses=3)
+# Creo una mappa tridimensionale
+library(rayshader)
+library(sp)
+library(raster)
+library(scales)
 
-cl <- colorRampPalette(c("blue", "green", "yellow"))(100)
-plot(Pietra4$map, col=cl)
