@@ -55,4 +55,5 @@ library(rayshader)
 library(sp)
 library(raster)
 library(scales)
+library(rgdal)
 
